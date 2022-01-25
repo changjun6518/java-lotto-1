@@ -1,6 +1,6 @@
 import domain.Amount;
 import domain.Lotto;
-import domain.LottoList;
+import domain.Lottos;
 import org.junit.jupiter.api.Test;
 
 class ApplicationTest {
@@ -13,12 +13,10 @@ class ApplicationTest {
 
     }
 
-
     @Test
     void generateLotto() {
-        LottoList lottoList = new LottoList();
+        Lottos lottos = new Lottos();
         Lotto lotto = new Lotto();
-        lottoList.generate(3); // 금액만큼
-        lotto.generate();
+        lottos.generate(3); // 금액만큼
     }
 }
