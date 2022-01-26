@@ -15,6 +15,15 @@ public class Lotto {
         generate();
     }
 
+    public void compare(List<Integer> winningNumbers) {
+        int count = 0;
+        for (Integer winningNumber : winningNumbers) {
+            if (numbers.contains(winningNumber)) {
+                count++;
+            }
+        }
+    }
+
     private void generate() {
         while (numbers.size() != SIZE) {
             addRandomNumberNotDuplicate();

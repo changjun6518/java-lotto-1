@@ -17,6 +17,10 @@ public class WinningNumber {
         isValidDuplicate();
     }
 
+    public void compare(Lotto lotto) {
+        lotto.compare(numbers);
+    }
+
     private void isValidPattern(String input) {
         boolean matches = Pattern.matches("[0-9]+, [0-9]+, [0-9]+, [0-9]+, [0-9]+, [0-9]+", input);
         if (!matches) {

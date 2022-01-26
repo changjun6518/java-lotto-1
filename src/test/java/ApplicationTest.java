@@ -1,6 +1,4 @@
-import domain.Amount;
-import domain.Lotto;
-import domain.Lottos;
+import domain.*;
 import org.junit.jupiter.api.Test;
 
 class ApplicationTest {
@@ -18,5 +16,13 @@ class ApplicationTest {
         Lottos lottos = new Lottos();
         Lotto lotto = new Lotto();
         lottos.generate(3); // 금액만큼
+    }
+
+    @Test
+    void compareNumbers() {
+        Lotto lotto = new Lotto();
+        WinningNumber winningNumber = new WinningNumber("1, 2, 3, 4, 5, 6");
+        winningNumber.compare(lotto);
+
     }
 }
