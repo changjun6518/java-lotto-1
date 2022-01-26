@@ -13,9 +13,9 @@ class ApplicationTest {
 
     @Test
     void generateLotto() {
-        Lottos lottos = new Lottos();
+        Amount amount = new Amount("1000");
+        Lottos lottos = new Lottos(amount);
         Lotto lotto = new Lotto();
-        lottos.generate(3); // 금액만큼
     }
 
     @Test
