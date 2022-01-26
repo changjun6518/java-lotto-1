@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 class LottosTest {
     @Test
     public void generateLottos() throws Exception{
-        Lottos lottos = new Lottos();
-        lottos.generate(5);
+        Amount amount = new Amount("3000");
+        Lottos lottos = new Lottos(amount);
 
     }
 }

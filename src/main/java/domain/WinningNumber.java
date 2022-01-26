@@ -24,7 +24,7 @@ public class WinningNumber {
     private void isValidPattern(String input) {
         boolean matches = Pattern.matches("[0-9]+, [0-9]+, [0-9]+, [0-9]+, [0-9]+, [0-9]+", input);
         if (!matches) {
-            throw new IllegalArgumentException("당첨번호를 잘 입력해주세요 (ex. 1, 10, 15, 32, 45, 42");
+            throw new IllegalArgumentException("당첨번호를 잘 입력해주세요 (ex. 1, 10, 15, 32, 45, 42)");
         }
     }
 

@@ -10,6 +10,10 @@ public class Amount {
         this.amount = Integer.parseInt(amount);
     }
 
+    public Integer countCanBuy() {
+        return amount / 1000;
+    }
+
     private void isValidUnit(String amount) {
         int amountInt = Integer.parseInt(amount);
         if (amountInt % 1000 != 0 || amountInt < 1000) {
