@@ -30,4 +30,8 @@ public class Amount {
             throw new IllegalArgumentException("트입 금액을 제대로 입력해 주세요");
         }
     }
+
+    public double calculateProfitRate(Reward reward) {
+        return reward.calculateProfitRate(amount);
+    }
 }

@@ -27,6 +27,10 @@ public enum Reward {
                 .orElse(FAIL);
     }
 
+    public double calculateProfitRate(int amount) {
+        return (double) price / amount;
+    }
+
     private boolean isSameCount(int count) {
         return this.count == count;
     }

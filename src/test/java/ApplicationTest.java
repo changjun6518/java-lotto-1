@@ -25,4 +25,16 @@ class ApplicationTest {
         Reward reward = winningNumber.compare(lotto);
         reward.print();
     }
+
+
+    @Test
+    void calculateProfitRate() {
+        Amount amount = new Amount("1000");
+        Lotto lotto = new Lotto();
+        WinningNumber winningNumber = new WinningNumber("1, 2, 3, 4, 5, 6");
+        Reward reward = winningNumber.compare(lotto);
+
+        double v = amount.calculateProfitRate(reward);
+        System.out.println(v);
+    }
 }
