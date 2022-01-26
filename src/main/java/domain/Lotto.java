@@ -15,13 +15,14 @@ public class Lotto {
         generate();
     }
 
-    public void compare(List<Integer> winningNumbers) {
+    public Reward compare(List<Integer> winningNumbers) {
         int count = 0;
         for (Integer winningNumber : winningNumbers) {
             if (numbers.contains(winningNumber)) {
                 count++;
             }
         }
+        return Reward.of(count);
     }
 
     private void generate() {

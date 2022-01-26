@@ -22,7 +22,7 @@ class ApplicationTest {
     void compareNumbers() {
         Lotto lotto = new Lotto();
         WinningNumber winningNumber = new WinningNumber("1, 2, 3, 4, 5, 6");
-        winningNumber.compare(lotto);
-
+        Reward reward = winningNumber.compare(lotto);
+        reward.print();
     }
 }

@@ -17,8 +17,8 @@ public class WinningNumber {
         isValidDuplicate();
     }
 
-    public void compare(Lotto lotto) {
-        lotto.compare(numbers);
+    public Reward compare(Lotto lotto) {
+        return lotto.compare(numbers);
     }
 
     private void isValidPattern(String input) {
