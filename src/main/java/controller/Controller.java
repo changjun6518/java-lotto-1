@@ -5,6 +5,7 @@ import domain.Lottos;
 import domain.Result;
 import domain.WinningNumber;
 import view.InputView;
+import view.OutputView;
 
 public class Controller {
 
@@ -13,8 +14,7 @@ public class Controller {
         Lottos lottos = new Lottos(amount);
         WinningNumber winningNumber = new WinningNumber(InputView.getWinningNumber());
         Result result = new Result(lottos, winningNumber);
-        Double profit = result.returnProfit(amount);
-        System.out.println("수익률은 : " + profit);
+        OutputView.printProfitResult(result, amount);
     }
 
 }

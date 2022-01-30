@@ -21,4 +21,10 @@ public class Result {
         }
         return profit;
     }
+
+    public int countReward(Reward reward) {
+        return (int) rewards.stream()
+                .filter(rewardResult -> rewardResult == reward)
+                .count();
+    }
 }

@@ -7,6 +7,8 @@ public enum Reward {
     SECOND("5개 일치 (1500000원)", 1_500_000, 5),
     THIRD("4개 일치 (50000원)", 50_000, 4),
     FOURTH("3개 일치 (5000원)", 5_000, 3),
+    FIFTH("2개 일치 (3000원)", 3_000, 2),
+    SIXTH("1개 일치 (1000원)", 1_000, 1),
     FAIL("아쉽지만 다음 기회에...", 0, 0),
     ;
 
@@ -35,7 +37,7 @@ public enum Reward {
         return this.count == count;
     }
 
-    public void print() {
-        System.out.println(message);
+    public String getMessage() {
+        return message;
     }
 }
