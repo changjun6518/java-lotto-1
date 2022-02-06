@@ -39,4 +39,10 @@ class WinningNumberTest {
                 () -> new WinningNumber("0, 100, 222, 333, 444, 55")
         );
     }
+
+    @Test
+    public void not_valid_bonusNumber_test() {
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> new WinningNumber("1, 2, 3, 4, 5, 6", 0));
+    }
 }

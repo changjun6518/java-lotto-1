@@ -10,9 +10,17 @@ import java.util.stream.Collectors;
 public class WinningNumber {
     private List<Integer> numbers;
 
-    public WinningNumber(String input) {
-        isValidPattern(input);
-        numbers = convertStringToIntegerList(input);
+    public WinningNumber(String numbers, Integer bonus) {
+        isValidPattern(numbers);
+        this.numbers = convertStringToIntegerList(numbers);
+        isValidNumbers();
+        isValidDuplicate();
+        isValidRange(bonus);
+    }
+
+    public WinningNumber(String numbers) {
+        isValidPattern(numbers);
+        this.numbers = convertStringToIntegerList(numbers);
         isValidNumbers();
         isValidDuplicate();
     }

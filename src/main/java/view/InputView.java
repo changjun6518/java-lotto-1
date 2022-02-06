@@ -27,4 +27,14 @@ public class InputView {
             return getWinningNumber();
         }
     }
+
+    public static Integer getBonusNumber() {
+        try {
+            System.out.println("보너스 번호를 입력해 주세요.");
+            return Integer.parseInt(br.readLine());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("보너스 번호를 제대로 입력해 주세요");
+            return getBonusNumber();
+        }
+    }
 }
