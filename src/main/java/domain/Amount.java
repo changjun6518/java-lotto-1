@@ -10,8 +10,19 @@ public class Amount {
         this.amount = Integer.parseInt(amount);
     }
 
+    public Amount(Integer amount) {
+        this.amount = amount;
+        isValidUnit(this.amount);
+    }
+
     public Integer countCanBuy() {
         return amount / 1000;
+    }
+
+    private void isValidUnit(Integer amount) {
+        if (amount % 1000 != 0 || amount < 1000) {
+            throw new IllegalArgumentException("투입 금액의 최소 단위는 1000원 입니다");
+        }
     }
 
     private void isValidUnit(String amount) {

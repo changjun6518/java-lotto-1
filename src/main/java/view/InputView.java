@@ -9,11 +9,12 @@ public class InputView {
     private static final Scanner sc = new Scanner(System.in);
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public static String getUserMoney() {
+    public static Integer getUserMoney() {
         try {
             System.out.println("구입금액을 입력해 주세요.");
-            return br.readLine();
-        } catch (IOException e) {
+            return Integer.parseInt(br.readLine());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("투입 금액을 제대로 입력해 주세요");
             return getUserMoney();
         }
     }
