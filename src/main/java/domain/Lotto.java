@@ -16,13 +16,10 @@ public class Lotto {
     }
 
     public Reward compare(List<Integer> winningNumbers, Integer bonus) {
-        int count = 0;
         boolean bonusHit = false;
-        for (Integer winningNumber : winningNumbers) {
-            if (numbers.contains(winningNumber)) {
-                count++;
-            }
-        }
+        int count = (int) winningNumbers.stream()
+                .filter(win -> numbers.contains(win))
+                .count();
         if (numbers.contains(bonus)) {
             bonusHit = true;
         }
