@@ -2,6 +2,7 @@ package domain;
 
 import org.junit.jupiter.api.Test;
 import view.InputView;
+import view.OutputView;
 
 import java.util.List;
 
@@ -18,6 +19,16 @@ class ResultTest {
         Double profit = result.returnProfit(amount);
         System.out.println("profit = " + profit);
         assertTrue(profit >= 0);
+    }
+
+    @Test
+    public void compareLottoNumberAndWinningNumberAndBonus() throws Exception {
+        Amount amount = new Amount("1000");
+        Lottos lottos = new Lottos(amount);
+        WinningNumber winningNumber = new WinningNumber("1, 2, 3, 4, 5, 45", 6);
+
+        Result result = new Result(lottos, winningNumber);
+        OutputView.printProfitResult(result, amount);
     }
 
 }

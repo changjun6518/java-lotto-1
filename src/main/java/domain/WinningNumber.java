@@ -9,12 +9,14 @@ import java.util.stream.Collectors;
 
 public class WinningNumber {
     private List<Integer> numbers;
+    private Integer bonus;
 
     public WinningNumber(String numbers, Integer bonus) {
         isValidPattern(numbers);
         this.numbers = convertStringToIntegerList(numbers);
+        this.bonus = bonus;
+        isValidDuplicate(bonus);
         isValidNumbers();
-        isValidDuplicate();
         isValidRange(bonus);
     }
 
@@ -26,7 +28,7 @@ public class WinningNumber {
     }
 
     public Reward compare(Lotto lotto) {
-        return lotto.compare(numbers);
+        return lotto.compare(numbers, bonus);
     }
 
     private void isValidPattern(String input) {
@@ -51,6 +53,14 @@ public class WinningNumber {
     private void isValidDuplicate() {
         HashSet<Integer> hashSet = new HashSet<>(numbers);
         if (hashSet.size() != 6) {
+            throw new IllegalArgumentException("중복된 숫자가 있습니다");
+        }
+    }
+
+    private void isValidDuplicate(Integer bonus) {
+        HashSet<Integer> hashSet = new HashSet<>(numbers);
+        hashSet.add(bonus);
+        if (hashSet.size() != 7) {
             throw new IllegalArgumentException("중복된 숫자가 있습니다");
         }
     }

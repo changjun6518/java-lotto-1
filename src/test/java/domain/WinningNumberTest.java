@@ -34,6 +34,13 @@ class WinningNumberTest {
     }
 
     @Test
+    public void bonus_duplicate_test() throws Exception {
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> new WinningNumber("1, 2, 3, 4, 5, 6", 1)
+        );
+    }
+
+    @Test
     public void not_correct_test() throws Exception{
         Assertions.assertThrows(IllegalArgumentException.class,
                 () -> new WinningNumber("0, 100, 222, 333, 444, 55")
