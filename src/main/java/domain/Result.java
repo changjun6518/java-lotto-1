@@ -7,11 +7,12 @@ public class Result {
     List<Reward> rewards;
 
     public Result(Lottos lottos, WinningNumber winningNumber) {
-        compare(lottos, winningNumber);
+        rewards = compare(lottos, winningNumber);
+
     }
 
-    private void compare(Lottos lottos, WinningNumber winningNumber) {
-        rewards = lottos.compare(winningNumber);
+    private List<Reward> compare(Lottos lottos, WinningNumber winningNumber) {
+        return lottos.compare(winningNumber);
     }
 
     public Double returnProfit(Amount amount) {
